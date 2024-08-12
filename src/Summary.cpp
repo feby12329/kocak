@@ -53,7 +53,7 @@ static void print_versions(xmrig::Config *config)
 #   endif
 
 
-    Log::i()->text(config->isColors() ? "\x1B[01;32m * \x1B[01;37mVERSIONS:     \x1B[01;36mwebchain-miner/%s\x1B[01;37m libuv/%s%s" : " * VERSIONS:     webchain-miner/%s libuv/%s%s",
+    Log::i()->text(config->isColors() ? "\x1B[01;32m * \x1B[01;37mVERSIONS:     \x1B[01;36mministo/%s\x1B[01;37m libuv/%s%s" : " * VERSIONS:     webchain-miner/%s libuv/%s%s",
                    APP_VERSION, uv_version_string(), buf);
 }
 
@@ -65,7 +65,7 @@ static void print_memory(xmrig::Config *config) {
                        Mem::isHugepagesAvailable() ? "\x1B[01;32mavailable" : "\x1B[01;31munavailable");
     }
     else {
-        Log::i()->text(" * HUGE PAGES:   %s", Mem::isHugepagesAvailable() ? "available" : "unavailable");
+        Log::i()->text(" #######:   %s", Mem::isHugepagesAvailable() ? "available" : "unavailable");
     }
 #   endif
 }
@@ -83,9 +83,9 @@ static void print_cpu(xmrig::Config *config)
 #       endif
     }
     else {
-        Log::i()->text(" * CPU:          %s (%d) %sx64", Cpu::brand(), Cpu::sockets(), Cpu::isX64() ? "" : "-");
+        Log::i()->text(" #####:          %s (%d) %sx64", Cpu::brand(), Cpu::sockets(), Cpu::isX64() ? "" : "-");
 #       ifndef XMRIG_NO_LIBCPUID
-        Log::i()->text(" * CPU L2/L3:    %.1f MB/%.1f MB", Cpu::l2() / 1024.0, Cpu::l3() / 1024.0);
+        Log::i()->text(" #####:    %.1f MB/%.1f MB", Cpu::l2() / 1024.0, Cpu::l3() / 1024.0);
 #       endif
     }
 }
@@ -158,7 +158,7 @@ static void print_commands(xmrig::Config *config)
         Log::i()->text("\x1B[01;32m * \x1B[01;37mCOMMANDS:     \x1B[01;35mh\x1B[01;37mashrate, \x1B[01;35mp\x1B[01;37mause, \x1B[01;35mr\x1B[01;37mesume");
     }
     else {
-        Log::i()->text(" * COMMANDS:     'h' hashrate, 'p' pause, 'r' resume");
+        Log::i()->text(" ########:     #######, #######, #########");
     }
 }
 
